@@ -5,7 +5,7 @@ $(function () {
       $("#datepicker").pickadate({
       format: "yyyy年mm月dd日",
       // 良福寺なら１だけ
-      disable: [1,7]
+      disable: [1]
       });
       //タイムピッカー用スクリプト
       $("#timepicker").pickatime({
