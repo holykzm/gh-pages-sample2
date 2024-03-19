@@ -1,0 +1,18 @@
+version: "3.7"
+
+services:
+  web:
+    build: .
+    container_name: BOND_simple-liff
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.static-site-router.rule=Host(`bond.simple-liff.holykzm.work`)
+      - traefik.http.routers.static-site-router.entrypoints=websecure
+      - traefik.http.routers.static-site-router.tls.certresolver=myresolver
+    networks:
+      - rp
+
+networks:
+  rp:
+    external: true
+    name: rp
